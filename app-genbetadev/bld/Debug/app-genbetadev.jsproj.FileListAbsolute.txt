@@ -1,0 +1,13 @@
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bin\Debug\resources.pri
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bin\Debug\AppxManifest.xml
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bin\Debug\app-genbetadev.build.appxrecipe
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\priconfig.xml.intermediate
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\layout.resfiles.intermediate
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\resources.resfiles.intermediate
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\pri.resfiles.intermediate
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\priconfig.xml
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\layout.resfiles
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\resources.resfiles
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\pri.resfiles
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\LanguageQualifiers.txt
+c:\users\josém\documents\visual studio 2012\Projects\app-genbetadev\app-genbetadev\bld\Debug\ProjectArchitectures.txt
