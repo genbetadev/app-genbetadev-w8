@@ -20,8 +20,10 @@
     }
 
         .fragment header[role=banner] .win-backbutton {
-            margin-left: 39px;
-            margin-top: 59px;
+            margin:59px 0 0 39px;
+            
+            /* margin-left: 39px;
+            margin-top: 59px; */
         }
 
         .fragment header[role=banner] .titlearea {
@@ -46,9 +48,11 @@
     }
 
         .fragment header[role=banner] .win-backbutton {
-            margin: 0;
+            
+            margin: 76px 10px 0 0;
+            /*margin: 0;
             margin-right: 10px;
-            margin-top: 76px;
+            margin-top: 76px;*/
         }
 
             .fragment header[role=banner] .win-backbutton:disabled {
@@ -57,8 +61,10 @@
 
         .fragment header[role=banner] .titlearea {
             -ms-grid-column: 2;
-            margin-left: 0;
-            margin-top: 68px;
+            margin: 68px 0 0 0;
+            
+           /* margin-left: 0;
+            margin-top: 68px;*/
         }
 }
 
