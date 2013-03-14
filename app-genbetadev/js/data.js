@@ -1,58 +1,73 @@
 ﻿(function () {
     "use strict";
 
-    var list = new WinJS.Binding.List();
-    var groupedItems = list.createGrouped(
-        function groupKeySelector(item) { return item.group.key; },
-        function groupDataSelector(item) { return item.group; }
-    );
+    var articleList = new WinJS.Binding.List();
 
     // TODO: Reemplace los datos con los datos reales.
     // Puede agregar datos de orígenes asincrónicos siempre que estén disponibles.
-    generateSampleData().forEach(function (item) {
+    /*generateSampleData().forEach(function (item) {
         list.push(item);
-    });
+    });*/
+
+    fetch();
 
     WinJS.Namespace.define("Data", {
-        items: groupedItems,
-        groups: groupedItems.groups,
-        getItemReference: getItemReference,
-        getItemsFromGroup: getItemsFromGroup,
-        resolveGroupReference: resolveGroupReference,
-        resolveItemReference: resolveItemReference
+        items: articleList,
     });
 
-    // Obtener una referencia para un elemento mediante la clave de grupo y el título del elemento como
-    // referencia única al elemento que pueda serializarse fácilmente.
-    function getItemReference(item) {
-        return [item.group.key, item.title];
+
+    function fetch()
+    {
+        WinJS.xhr({ url: "http://feeds.weblogssl.com/genbetadev?format=xml" }).then(
+       function (rss) {
+           var rssTitle = rss.responseXML.querySelector("title").textContent;
+           var rssLastUpdate = Date.parse(rss.responseXML.querySelector("lastBuildDate").textContent);
+
+           var rssItems = rss.responseXML.querySelectorAll("item");
+           //Recorremos cada una de las entradas del RSS
+           for (var n = 0; n < rssItems.length; n++) {
+               var article = {
+                   title: rssItems[n].querySelector("title").textContent,
+                   link: rssItems[n].querySelector("link").textContent,
+                   description: rssItems[n].querySelector("description").textContent,
+                   pubDate: Date.parse(rssItems[n].querySelector("pubDate").textContent),
+                   author: rssItems[n].querySelector("author").textContent,
+                   thumbnails: parseThumbnails(rssItems[n].querySelector("description").textContent)
+               };
+
+               articleList.push(article);
+               
+           }
+           console.log(articleList);
+
+           //WinJS.Navigation.navigate("pages/itemList/itemList.html", null);
+
+           // var title = WinJS.Utilities.query('.pagetitle')[0];
+
+       });
     }
 
-    // Esta función devuelve un objeto WinJS.Binding.List que contiene solamente los elementos
-    // pertenecientes al grupo proporcionado.
-    function getItemsFromGroup(group) {
-        return list.createFiltered(function (item) { return item.group.key === group.key; });
-    }
+    function parseThumbnails(description) {
+        var parser = new DOMParser();
+        var descriptionDoc = parser.parseFromString(description,"text/html");
+        var thumbnails = descriptionDoc.querySelectorAll("img");
 
-    // Consiga el grupo único que corresponde a la clave de grupo proporcionada.
-    function resolveGroupReference(key) {
-        for (var i = 0; i < groupedItems.groups.length; i++) {
-            if (groupedItems.groups.getAt(i).key === key) {
-                return groupedItems.groups.getAt(i);
-            }
+        
+        var thumbnailList = {}
+        for (var n = 0; n < thumbnails.length; n++) {
+            thumbnailList[n] = { src: thumbnails[n].src, alt: thumbnails[n].alt };
+
         }
+
+        
+        return thumbnailList;
+        
+
+        //"<\s*img\s(?:.+?\s*=\s*(\"|')?.*?\1\s*)?/>"
+
     }
 
-    // Consiga un elemento único de la matriz de cadenas proporcionada, que debe contener una
-    // clave de grupo y un título de elemento.
-    function resolveItemReference(reference) {
-        for (var i = 0; i < groupedItems.length; i++) {
-            var item = groupedItems.getAt(i);
-            if (item.group.key === reference[0] && item.title === reference[1]) {
-                return item;
-            }
-        }
-    }
+
 
     // Devuelve una matriz de datos de muestra que se puede agregar a la lista de datos
     // de la aplicación. 

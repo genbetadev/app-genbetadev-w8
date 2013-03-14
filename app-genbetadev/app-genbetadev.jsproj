@@ -47,9 +47,7 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>es-ES</DefaultLanguage>
-    
     <PackageCertificateKeyFile>app-genbetadev_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -69,13 +67,16 @@
     <Content Include="pages\groupDetail\groupDetail.css" />
     <Content Include="pages\groupDetail\groupDetail.html" />
     <Content Include="pages\groupDetail\groupDetail.js" />
-    <Content Include="pages\groupedItems\groupedItems.css" />
-    <Content Include="pages\groupedItems\groupedItems.html" />
-    <Content Include="pages\groupedItems\groupedItems.js" />
+    <Content Include="pages\itemList\itemList.css" />
+    <Content Include="pages\itemList\itemList.html" />
+    <Content Include="pages\itemList\itemList.js" />
     <Content Include="default.html" />
-    
+    <Content Include="pages\loading\loading.css" />
+    <Content Include="pages\loading\loading.html" />
+    <Content Include="test\xmlfile.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="app-genbetadev_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />

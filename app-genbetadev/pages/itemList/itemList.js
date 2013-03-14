@@ -6,7 +6,7 @@
     var nav = WinJS.Navigation;
     var ui = WinJS.UI;
 
-    ui.Pages.define("/pages/groupedItems/groupedItems.html", {
+    ui.Pages.define("/pages/itemList/itemList.html", {
         // Navega a groupHeaderPage. Se llama desde groupHeaders,
         // método abreviado de teclado y iteminvoked.
         navigateToGroup: function (key) {
@@ -17,20 +17,20 @@
         // rellena los elementos de la página con los datos de la aplicación.
         ready: function (element, options) {
             var listView = element.querySelector(".groupeditemslist").winControl;
-            listView.groupHeaderTemplate = element.querySelector(".headertemplate");
+            
             listView.itemTemplate = element.querySelector(".itemtemplate");
             listView.oniteminvoked = this._itemInvoked.bind(this);
 
             // Configurar un método abreviado de teclado (ctrl + alt + g) para navegar al
             // grupo actual cuando no se está en modo Snapped.
-            listView.addEventListener("keydown", function (e) {
+            /*listView.addEventListener("keydown", function (e) {
                 if (appView.value !== appViewState.snapped && e.ctrlKey && e.keyCode === WinJS.Utilities.Key.g && e.altKey) {
                     var data = listView.itemDataSource.list.getAt(listView.currentItem.index);
                     this.navigateToGroup(data.group.key);
                     e.preventDefault();
                     e.stopImmediatePropagation();
                 }
-            }.bind(this), true);
+            }.bind(this), true);*/
 
             this._initializeLayout(listView, appView.value);
             listView.element.focus();
@@ -63,21 +63,17 @@
                 listView.layout = new ui.ListLayout();
             } else {
                 listView.itemDataSource = Data.items.dataSource;
-                listView.groupDataSource = Data.groups.dataSource;
+                listView.groupDataSource = null;
                 listView.layout = new ui.GridLayout({ groupHeaderPosition: "top" });
             }
         },
 
         _itemInvoked: function (args) {
-            if (appView.value === appViewState.snapped) {
-                // Si la página está en estado Snapped, el usuario invocó un grupo.
-                var group = Data.groups.getAt(args.detail.itemIndex);
-                this.navigateToGroup(group.key);
-            } else {
+            
                 // Si la página no está en estado Snapped, el usuario invocó un elemento.
                 var item = Data.items.getAt(args.detail.itemIndex);
-                nav.navigate("/pages/itemDetail/itemDetail.html", { item: Data.getItemReference(item) });
-            }
+                nav.navigate("/pages/itemDetail/itemDetail.html", { item: item });
+            
         }
     });
 })();
