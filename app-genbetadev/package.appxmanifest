@@ -1,48 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity
-    Name="02c91d46-75b6-457c-aa4a-ae077e7103aa"
-    Version="1.0.0.0"
-    Publisher="CN=JoséM" />
-
+  <Identity Name="02c91d46-75b6-457c-aa4a-ae077e7103aa" Version="1.0.0.0" Publisher="CN=JoséM" />
   <Properties>
     <DisplayName>app-genbetadev</DisplayName>
     <PublisherDisplayName>JoséM</PublisherDisplayName>
     <Logo>images\storelogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.1</OSMinVersion>
     <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
     <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application 
-      Id="App"
-      StartPage="default.html">
-
-      <VisualElements
-        DisplayName="app-genbetadev"
-        Logo="images\logo.png"
-        SmallLogo="images\smalllogo.png"
-        Description="app-genbetadev"
-        ForegroundText="light"
-        BackgroundColor="#464646">
-
+    <Application Id="App" StartPage="default.html">
+      <VisualElements DisplayName="Genbeta Dev Reader" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="Lector RSS de Genbeta Dev" ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="images\splashscreen.png" />
-
       </VisualElements>
     </Application>
   </Applications>
-
   <Capabilities>
     <Capability Name="internetClient" />
   </Capabilities>
-
 </Package>

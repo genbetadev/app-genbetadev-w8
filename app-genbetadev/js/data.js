@@ -30,7 +30,7 @@
                    title: rssItems[n].querySelector("title").textContent,
                    link: rssItems[n].querySelector("link").textContent,
                    description: rssItems[n].querySelector("description").textContent,
-                   pubDate: Date.parse(rssItems[n].querySelector("pubDate").textContent),
+                   pubDate: new Date(rssItems[n].querySelector("pubDate").textContent),
                    author: rssItems[n].querySelector("author").textContent,
                    thumbnails: parseThumbnails(rssItems[n].querySelector("description").textContent)
                };

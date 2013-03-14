@@ -24,20 +24,39 @@
             margin-bottom: 19px;
         }
 
-        .itemdetailpage .content article header .item-subtitle {
+        .itemdetailpage .content article header .item-pub-date {
             margin-bottom: 16px;
             margin-top: 0;
         }
 
+        .itemdetailpage .content article header .item-author {
+            float:right;
+            border: 1px solid #bbb;
+            padding: 3px 6px;
+            background-color: #111;
+            margin-right: 20px;
+            margin-top: -5px;
+            border-radius: 4px;
+            
+        }
+
+
+        
+
+        .itemdetailpage .content article img {
+            max-width: 100%;
+        }
+        /*
         .itemdetailpage .content article .item-image {
             height: 240px;
             width: 460px;
-        }
+        }*/
 
         .itemdetailpage .content article .item-content p {
             margin-top: 10px;
             margin-bottom: 20px;
             margin-right: 20px;
+            text-align:justify;
         }
 
 @media screen and (-ms-view-state: snapped) {

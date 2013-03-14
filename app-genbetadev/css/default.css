@@ -1,10 +1,10 @@
-﻿body {
-    background-color: #9cc8eb;
-}
-
-#contenthost {
+﻿#contenthost {
     height: 100%;
     width: 100%;
+}
+
+a {
+    cursor: pointer;
 }
 
 .fragment {
