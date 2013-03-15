@@ -1,4 +1,10 @@
-﻿#contenthost {
+﻿body {
+    background-image: url('images/top-back.jpg');
+    background-repeat: repeat-x;
+    background-color: #95c7ec;
+}
+
+#contenthost {
     height: 100%;
     width: 100%;
 }
@@ -24,8 +30,7 @@ a {
     }
 
         .fragment header[role=banner] .win-backbutton {
-            margin:59px 0 0 39px;
-            
+            margin: 59px 0 0 39px;
             /* margin-left: 39px;
             margin-top: 59px; */
         }
@@ -52,7 +57,6 @@ a {
     }
 
         .fragment header[role=banner] .win-backbutton {
-            
             margin: 76px 10px 0 0;
             /*margin: 0;
             margin-right: 10px;
@@ -66,8 +70,7 @@ a {
         .fragment header[role=banner] .titlearea {
             -ms-grid-column: 2;
             margin: 68px 0 0 0;
-            
-           /* margin-left: 0;
+            /* margin-left: 0;
             margin-top: 68px;*/
         }
 }
