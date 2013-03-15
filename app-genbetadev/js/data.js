@@ -26,24 +26,23 @@
            var rssItems = rss.responseXML.querySelectorAll("item");
            //Recorremos cada una de las entradas del RSS
            for (var n = 0; n < rssItems.length; n++) {
+               var finalDescription = cleanDescription(rssItems[n].querySelector("description").textContent);
+               var pubDate = new Date(rssItems[n].querySelector("pubDate").textContent)
+
                var article = {
                    title: rssItems[n].querySelector("title").textContent,
                    link: rssItems[n].querySelector("link").textContent,
-                   description: rssItems[n].querySelector("description").textContent,
-                   pubDate: new Date(rssItems[n].querySelector("pubDate").textContent),
+                   description: finalDescription,
+                   pubDate: pubDate,
+                   pubDateHuman: Tools.Date.toHuman(pubDate),
                    author: rssItems[n].querySelector("author").textContent,
-                   thumbnails: parseThumbnails(rssItems[n].querySelector("description").textContent)
+                   thumbnails: parseThumbnails(finalDescription)
                };
 
                articleList.push(article);
                
            }
            console.log(articleList);
-
-           //WinJS.Navigation.navigate("pages/itemList/itemList.html", null);
-
-           // var title = WinJS.Utilities.query('.pagetitle')[0];
-
        });
     }
 
@@ -55,16 +54,22 @@
         
         var thumbnailList = {}
         for (var n = 0; n < thumbnails.length; n++) {
-            thumbnailList[n] = { src: thumbnails[n].src, alt: thumbnails[n].alt };
+            thumbnailList[n] = {
+                src: thumbnails[n].src,
+                alt: thumbnails[n].alt,
+                back: "url(" + thumbnails[n].src + ")"
+            };
 
         }
-
-        
         return thumbnailList;
-        
+    }
 
-        //"<\s*img\s(?:.+?\s*=\s*(\"|')?.*?\1\s*)?/>"
-
+    function cleanDescription(description) {
+        var match = description.match(/<div class='mf-viral'>/);
+        if (match) {
+            description = description.substr(0, match.index);
+        }
+        return description;
     }
 
 

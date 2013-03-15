@@ -63,10 +63,14 @@
         display: -ms-grid;
         height: 250px;
         width: 250px;
+		background-color:white !important;
+		
     }
 
         .groupeditemspage .groupeditemslist .item .item-image {
             -ms-grid-row-span: 2;
+            background-size: cover !important;
+            background-position: center center !important;
         }
 
         .groupeditemspage .groupeditemslist .item .item-overlay {

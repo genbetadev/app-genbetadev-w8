@@ -1,16 +1,26 @@
-﻿body {
-    background-image: url('images/top-back.jpg');
-    background-repeat: repeat-x;
-    background-color: #95c7ec;
+﻿
+@font-face {
+    font-family: monaco;
+    src: url('assets/monaco.eot');
+}
+
+body {
+    /*background: -ms-linear-gradient(left, #1c324a 1%,#2b4d72 100%); /* IE10+ */
+    background-image: url("/images/back.jpg");
+    background-size: cover;
+}
+
+header {
+    
+}
+
+a {
+    cursor: pointer;
 }
 
 #contenthost {
     height: 100%;
     width: 100%;
-}
-
-a {
-    cursor: pointer;
 }
 
 .fragment {
@@ -31,8 +41,6 @@ a {
 
         .fragment header[role=banner] .win-backbutton {
             margin: 59px 0 0 39px;
-            /* margin-left: 39px;
-            margin-top: 59px; */
         }
 
         .fragment header[role=banner] .titlearea {
@@ -84,3 +92,5 @@ a {
             margin-left: 29px;
         }
 }
+
+.
