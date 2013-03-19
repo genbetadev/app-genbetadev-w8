@@ -9,6 +9,7 @@
     z-index: 0;
 }
 
+
     .itemdetailpage .content article {
         /* Definir un artículo de varias columnas con desplazamiento horizontal de forma predeterminada. */
         column-fill: auto;
@@ -24,21 +25,68 @@
             margin-bottom: 19px;
         }
 
-        .itemdetailpage .content article header .item-subtitle {
+        .itemdetailpage .content article header .item-pub-date {
             margin-bottom: 16px;
             margin-top: 0;
         }
 
+        .itemdetailpage .content article header .item-author {
+            float: right;
+            border: 1px solid #bbb;
+            padding: 3px 6px;
+            background-color: #111;
+            margin-right: 20px;
+            margin-top: -5px;
+            border-radius: 4px;
+        }
+
+
+        .itemdetailpage .content article .item-content {
+            margin-top: 30px;
+        }
+
+
+            .itemdetailpage .content article .item-content pre.prettyprint {
+                background-color: lightgray;
+                white-space: pre-wrap;
+                display: block;
+                border: 1px solid gray;
+                padding: 10px;
+                box-shadow: inset 0 0 10px gray;
+            }
+
+            .itemdetailpage .content article .item-content code {
+                font-family: Monaco, "Courier New", Courier, monospace;
+                color: #999;
+            }
+
+            .itemdetailpage .content article .item-content pre.prettyprint code {
+                padding: 20px;
+                color: black;
+            }
+
+
+            .itemdetailpage .content article .item-content p img {
+                max-width: 100%;
+                box-sizing: border-box;
+                border: 4px solid white;
+                display: block;
+                margin: auto;
+                box-shadow: 0 0 10px black;
+				background-color: white;
+            }
+            /*
         .itemdetailpage .content article .item-image {
             height: 240px;
             width: 460px;
-        }
+        }*/
 
-        .itemdetailpage .content article .item-content p {
-            margin-top: 10px;
-            margin-bottom: 20px;
-            margin-right: 20px;
-        }
+            .itemdetailpage .content article .item-content p {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                margin-right: 20px;
+                text-align: justify;
+            }
 
 @media screen and (-ms-view-state: snapped) {
     .itemdetailpage .content {

@@ -47,15 +47,16 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>es-ES</DefaultLanguage>
-    
     <PackageCertificateKeyFile>app-genbetadev_TemporaryKey.pfx</PackageCertificateKeyFile>
-    
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="css\assets\monaco.eot" />
     <Content Include="css\default.css" />
+    <Content Include="images\back.jpg" />
+    <Content Include="images\header.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
@@ -63,19 +64,23 @@
     <Content Include="js\data.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="js\tools.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />
     <Content Include="pages\groupDetail\groupDetail.css" />
     <Content Include="pages\groupDetail\groupDetail.html" />
     <Content Include="pages\groupDetail\groupDetail.js" />
-    <Content Include="pages\groupedItems\groupedItems.css" />
-    <Content Include="pages\groupedItems\groupedItems.html" />
-    <Content Include="pages\groupedItems\groupedItems.js" />
+    <Content Include="pages\itemList\itemList.css" />
+    <Content Include="pages\itemList\itemList.html" />
+    <Content Include="pages\itemList\itemList.js" />
     <Content Include="default.html" />
-    
+    <Content Include="pages\loading\loading.css" />
+    <Content Include="pages\loading\loading.html" />
+    <Content Include="test\xmlfile.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="app-genbetadev_TemporaryKey.pfx" />
-    
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />

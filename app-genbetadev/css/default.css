@@ -1,4 +1,24 @@
-﻿#contenthost {
+﻿
+@font-face {
+    font-family: monaco;
+    src: url('assets/monaco.eot');
+}
+
+body {
+    /*background: -ms-linear-gradient(left, #1c324a 1%,#2b4d72 100%); /* IE10+ */
+    background-image: url("/images/back.jpg");
+    background-size: cover;
+}
+
+header {
+    
+}
+
+a {
+    cursor: pointer;
+}
+
+#contenthost {
     height: 100%;
     width: 100%;
 }
@@ -20,10 +40,7 @@
     }
 
         .fragment header[role=banner] .win-backbutton {
-            margin:59px 0 0 39px;
-            
-            /* margin-left: 39px;
-            margin-top: 59px; */
+            margin: 59px 0 0 39px;
         }
 
         .fragment header[role=banner] .titlearea {
@@ -48,7 +65,6 @@
     }
 
         .fragment header[role=banner] .win-backbutton {
-            
             margin: 76px 10px 0 0;
             /*margin: 0;
             margin-right: 10px;
@@ -62,8 +78,7 @@
         .fragment header[role=banner] .titlearea {
             -ms-grid-column: 2;
             margin: 68px 0 0 0;
-            
-           /* margin-left: 0;
+            /* margin-left: 0;
             margin-top: 68px;*/
         }
 }
@@ -77,3 +92,5 @@
             margin-left: 29px;
         }
 }
+
+.
